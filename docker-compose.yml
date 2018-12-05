@@ -1,4 +1,4 @@
-version: "2"
+version: 2
 
 services:
   teampass-db:
@@ -16,7 +16,7 @@ services:
         max-size: 100m
         max-file: 1
     volumes:
-      - "/var/dockershared/passmgr/db:/var/lib/mysql:rw"
+      - /var/dockershared/passmgr/db:/var/lib/mysql:rw
     environment:
       MYSQL_ROOT_PASSWORD: 4dm1nSd1g1tS 
       MYSQL_DATABASE: teampass
@@ -43,7 +43,7 @@ services:
         max-size: 100m
         max-file: 1
     volumes:
-        - "/certificates:/var/dockershared/passmgr/certificates:ro"
+        - /certificates:/var/dockershared/passmgr/certificates:ro
     links:
       - teampass-db:db
     depends_on:
